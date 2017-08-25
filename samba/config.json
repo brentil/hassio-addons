@@ -1,6 +1,6 @@
 {
   "name": "Samba share",
-  "version": "2.0",
+  "version": "2.1",
   "slug": "samba",
   "description": "Expose Hass.io folders with SMB/CIFS",
   "url": "https://home-assistant.io/addons/samba/",
@@ -21,7 +21,10 @@
     },
     "username": "",
     "password": "",
-    "interface": "eth0"
+    "interface": "eth0",
+	"smbversion": "SMB2",
+	"signing": "mandatory",
+	"encrypt": "auto"
   },
   "schema": {
     "workgroup": "str",
@@ -36,7 +39,10 @@
     },
     "username": "str",
     "password": "str",
-    "interface": "str"
+    "interface": "str",
+	"smbversion": "str",
+	"signing": "str",
+	"encrypt": "str"
   },
   "image": "homeassistant/{arch}-addon-samba"
 }

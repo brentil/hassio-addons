@@ -14,6 +14,9 @@ MAP_SSL=$(jq --raw-output '.map.ssl' $CONFIG_PATH)
 MAP_SHARE=$(jq --raw-output '.map.share' $CONFIG_PATH)
 MAP_BACKUP=$(jq --raw-output '.map.backup' $CONFIG_PATH)
 INTERFACE=$(jq --raw-output '.interface // empty' $CONFIG_PATH)
+SMBVERSION=$(jq --raw-output '.smbversion' $CONFIG_PATH)
+SIGNING=$(jq --raw-output '.signing' $CONFIG_PATH)
+ENCRYPT=$(jq --raw-output '.encrypt' $CONFIG_PATH)
 
 function write_config() {
     echo "
@@ -35,6 +38,9 @@ function write_config() {
 sed -i "s/%%WORKGROUP%%/$WORKGROUP/g" /etc/smb.conf
 sed -i "s/%%NAME%%/$NAME/g" /etc/smb.conf
 sed -i "s/%%INTERFACE%%/$INTERFACE/g" /etc/smb.conf
+sed -i "s/%%SMBVERSION%%/$SMBVERSION/g" /etc/smb.conf
+sed -i "s/%%SIGNING%%/$SIGNING/g" /etc/smb.conf
+sed -i "s/%%ENCRYPT%%/$ENCRYPT/g" /etc/smb.conf
 
 ##
 # Write shares to config
