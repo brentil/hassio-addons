@@ -43,5 +43,5 @@
 	"smbversion": "str",
 	"signing": "str",
 	"encrypt": "str"
-  },
+  }
 }
