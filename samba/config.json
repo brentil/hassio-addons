@@ -44,5 +44,4 @@
 	"signing": "str",
 	"encrypt": "str"
   },
-  "image": "homeassistant/{arch}-addon-samba"
 }
